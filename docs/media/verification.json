@@ -1,0 +1,29 @@
+{
+  "codec": "h264",
+  "pixelFormat": "yuv420p",
+  "width": 1280,
+  "height": 720,
+  "fps": "10/1",
+  "durationSeconds": 50.2,
+  "bytes": 180456,
+  "sha256": "81a7a5e8dade17b72543a56fa56f777ba5c7e936baeaea7f145214171696fb72",
+  "fullDecode": "passed",
+  "rawCaptureHashes": "passed",
+  "visualReview": {
+    "status": "passed",
+    "reviewedAt": "2026-10-01T17:39:00Z",
+    "scope": "All six decoded scene midpoint frames of the 720p variant inspected. Main captions and actual input/result remain legible; full decode passed. The compressed QR-preview frame independently decodes to the exact original payload."
+  },
+  "scope": {
+    "status": "complete",
+    "notDemonstrated": [],
+    "scope": "One verified text-to-QR \u2192 Android PNG export \u2192 image re-import \u2192 exact payload decode round-trip; not a claim about every barcode format or camera input"
+  },
+  "sourceFreezeVerification": {
+    "checkedFiles": 265,
+    "mismatches": 0,
+    "sourceInputSha256": "e01b0cbe68b5401cc86791bba48d1c958d85e65410ce1bb4eec1cdd9190c06dc",
+    "apkSha256": "d44be7016b7aae370c421314ff7d274297129409e8e25d989ddf5b4d84621689"
+  },
+  "compressedPreviewDecode": "https://example.org/oritwig-codes"
+}

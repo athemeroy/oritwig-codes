@@ -14,11 +14,15 @@ See [exact source lineage and adapter boundaries](docs/PROVENANCE.md).
 
 ## See it running
 
-![Oritwig Codes actual QR preview](docs/media/poster.png)
+[![Watch the Oritwig Codes input-to-result demo](docs/media/poster.png)](docs/media/demo.mp4)
 
-The final-build screenshots below show the verified workflow. A compact video
-upload is being finalized; the recorded demo uses actual app footage and screenshots.
-Input is an existing image; live camera scanning is not implemented.
+[Watch the 50-second demo (MP4, 181 KB)](docs/media/demo.mp4) · [Media provenance](docs/media/manifest.json)
+
+The edit uses actual final-build recording excerpts and later full-screen Android
+screenshots: type a payload, generate a QR, export its PNG through Android Files,
+re-import that exact file, and inspect the unchanged decoded text. It is an edited
+demonstration, not a continuous recording. Input is an existing image; live camera
+scanning is not implemented.
 
 ### Full-screen captures
 
@@ -30,7 +34,9 @@ Open any image to view its original 480 × 800 capture.
 
 Captured from `0.1.0-prototype` on an Android API26 x86 software emulator. The
 exported PNG was independently verified as 1,024 × 1,024 pixels with the exact
-33-character payload `https://example.org/oritwig-codes`. [Verification scope and limits](docs/QA.md).
+33-character payload `https://example.org/oritwig-codes`. The [manifest](docs/media/manifest.json)
+records the final APK SHA-256, frozen source-input hash, unchanged ZXing 3.5.4 pin,
+capture hashes and selected recording ranges. [Verification scope and limits](docs/QA.md).
 
 Tested source: [`7c5be8c`](https://github.com/athemeroy/oritwig-codes/commit/7c5be8c08b4554cb968679706114232f466cad53).
 

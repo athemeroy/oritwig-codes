@@ -1,0 +1,264 @@
+{
+  "schemaVersion": 1,
+  "status": "captured",
+  "app": {
+    "id": "dev.oritwig.codes",
+    "name": "Oritwig Codes",
+    "versionName": "0.1.0-prototype",
+    "versionCode": 1,
+    "buildType": "debug",
+    "repository": "https://github.com/athemeroy/oritwig-codes",
+    "commit": "7c5be8c08b4554cb968679706114232f466cad53",
+    "apkSha256": "d44be7016b7aae370c421314ff7d274297129409e8e25d989ddf5b4d84621689",
+    "sourceInputSha256": "e01b0cbe68b5401cc86791bba48d1c958d85e65410ce1bb4eec1cdd9190c06dc"
+  },
+  "upstream": {
+    "name": "ZXing core",
+    "version": "3.5.4",
+    "repository": "https://github.com/zxing/zxing",
+    "commit": "f651b0a0375676e47144f73397dddff8868b0e4c",
+    "unchangedCoreFiles": 239,
+    "archiveSha256": "f41a8755d88a9955469459e40d27de2e3342cfc34e2fd7c268460f690d961ebb"
+  },
+  "capture": {
+    "device": "x86 software emulator \u00b7 480 \u00d7 800",
+    "androidVersion": "8.0.0",
+    "api": 26,
+    "screen": {
+      "width": 480,
+      "height": 800,
+      "dpi": null,
+      "densityStatus": "Not independently captured; no device model or density is claimed"
+    },
+    "capturedAt": "2026-10-01T16:21:46.317107+00:00",
+    "method": "Original adb screencap PNGs and adb emu host screenrecord WebM; edited excerpts preserve source speed",
+    "source": "Final APK UI session: final-build screenshots and selected host-emulator recording excerpts; exact source identities and hashes recorded below",
+    "syntheticUserData": true,
+    "rawRecording": {
+      "basename": "codes-create-save.webm",
+      "sha256": "9202b5e92f1c19eb94404ad6cb0e194d23bf83c69f1a7544f9440a857711a369",
+      "availability": "Original retained as verification evidence; not distributed in this repository"
+    }
+  },
+  "requiredStages": [
+    "home",
+    "input",
+    "generate",
+    "export",
+    "import",
+    "decode"
+  ],
+  "coverage": {
+    "status": "complete",
+    "notDemonstrated": [],
+    "scope": "One verified text-to-QR \u2192 Android PNG export \u2192 image re-import \u2192 exact payload decode round-trip; not a claim about every barcode format or camera input"
+  },
+  "scenes": [
+    {
+      "id": "01-home",
+      "stage": "home",
+      "file": "screenshots/01-home.png",
+      "sourceFile": "evidence/ui/19-final-home.png",
+      "title": "Read an image. Make a QR.",
+      "caption": "Start with an existing image or create a code from your own text. This app uses image input.",
+      "observed": "Final installed APK home screenshot, visually inspected; Read image and Create QR modes visible. No live camera input.",
+      "kind": "screenshot",
+      "durationSeconds": 4,
+      "sha256": "7b1080e0204aea575d930090bdfdf43b8a944f9748dba95df46174aedf6aa3c7",
+      "reviewed": true,
+      "rawCapture": true,
+      "outputStartSeconds": 0.0
+    },
+    {
+      "id": "02-type",
+      "stage": "input",
+      "file": "codes-create-save.webm",
+      "sourceFile": "codes-create-save.webm",
+      "title": "Write your payload",
+      "caption": "Enter the text, then generate a QR with the unchanged ZXing core.",
+      "observed": "Raw host video seconds 50\u201366 shows typed synthetic URL https://example.org/oritwig-codes and Preview QR generating the result.",
+      "kind": "screenrecord",
+      "durationSeconds": 16,
+      "sha256": "9202b5e92f1c19eb94404ad6cb0e194d23bf83c69f1a7544f9440a857711a369",
+      "reviewed": true,
+      "rawCapture": true,
+      "sourceStartSeconds": 50,
+      "outputStartSeconds": 4.0,
+      "sourceAvailability": "Original retained as verification evidence; not distributed in this repository"
+    },
+    {
+      "id": "03-preview",
+      "stage": "generate",
+      "file": "screenshots/03-preview.png",
+      "sourceFile": "evidence/ui/22-final-qr.png",
+      "title": "Preview the code",
+      "caption": "The 33-character payload becomes a 1,024 \u00d7 1,024 PNG QR, ready to save.",
+      "observed": "Final screenshot visibly shows the exact payload, QR preview, 1024\u00d71024 PNG label, ZXing and correction level M.",
+      "kind": "screenshot",
+      "durationSeconds": 5,
+      "sha256": "75dc21a064a3f0488e8a84bbfd99c16b8bb89bf8c1c948a70ca642ad7e63e70b",
+      "reviewed": true,
+      "rawCapture": true,
+      "outputStartSeconds": 20.0
+    },
+    {
+      "id": "04-save",
+      "stage": "export",
+      "file": "codes-create-save.webm",
+      "sourceFile": "codes-create-save.webm",
+      "title": "Save a portable PNG",
+      "caption": "Name the file in Android\u2019s save picker. The exported PNG was independently checked.",
+      "observed": "Raw host video seconds 163\u2013173 shows naming codes-final.png and the Save action. Later actual export is present and independently decoded; SHA-256 is recorded in exportVerification.",
+      "kind": "screenrecord",
+      "durationSeconds": 10,
+      "sha256": "9202b5e92f1c19eb94404ad6cb0e194d23bf83c69f1a7544f9440a857711a369",
+      "reviewed": true,
+      "rawCapture": true,
+      "sourceStartSeconds": 163,
+      "outputStartSeconds": 25.0,
+      "sourceAvailability": "Original retained as verification evidence; not distributed in this repository"
+    },
+    {
+      "id": "05-reimport",
+      "stage": "import",
+      "file": "screenshots/05-reimport.png",
+      "sourceFile": "evidence/ui/25-final-import-picker.png",
+      "title": "Open the exported image",
+      "caption": "Choose codes-final.png through Android Files to read it back.",
+      "observed": "Final Android image-picker screenshot shows actual codes-final.png with 7.56 KB size. Subsequent action log selects this exact exported PNG.",
+      "kind": "screenshot",
+      "durationSeconds": 6,
+      "sha256": "424f9eff5120a2c4f6822456ff1578055595b71bc0a26035a46ca77f67bd751a",
+      "reviewed": true,
+      "rawCapture": true,
+      "outputStartSeconds": 35.0
+    },
+    {
+      "id": "06-result",
+      "stage": "decode",
+      "file": "screenshots/06-result.png",
+      "sourceFile": "evidence/ui/26-final-roundtrip.png",
+      "title": "Review the exact result",
+      "caption": "The same 33-character payload returns as QR CODE / URI. Nothing is opened automatically.",
+      "observed": "Final result screenshot shows QR CODE / URI / Characters:33 and exactly https://example.org/oritwig-codes. Actual exported PNG independently decoded to that same payload.",
+      "kind": "screenshot",
+      "durationSeconds": 9,
+      "sha256": "2e7289bd09eadcf86af66aa38ba7f63d147af8931650f22cd9a4559942a0f6c7",
+      "reviewed": true,
+      "rawCapture": true,
+      "outputStartSeconds": 41.0
+    }
+  ],
+  "gallery": [
+    {
+      "id": "gallery-01",
+      "stage": "home",
+      "file": "screenshots/gallery-01.png",
+      "sourceFile": "evidence/ui/19-final-home.png",
+      "title": "Image reader and QR maker",
+      "caption": "Choose between reading an image and creating a QR.",
+      "observed": "Final APK home screen; no camera workflow.",
+      "kind": "screenshot",
+      "durationSeconds": 5,
+      "sha256": "7b1080e0204aea575d930090bdfdf43b8a944f9748dba95df46174aedf6aa3c7",
+      "reviewed": true,
+      "rawCapture": true
+    },
+    {
+      "id": "gallery-02",
+      "stage": "generate",
+      "file": "screenshots/gallery-02.png",
+      "sourceFile": "evidence/ui/22-final-qr.png",
+      "title": "Text and generated QR",
+      "caption": "The input payload and its generated QR are visible together.",
+      "observed": "Final APK QR preview shows exact input, QR and PNG dimensions.",
+      "kind": "screenshot",
+      "durationSeconds": 5,
+      "sha256": "75dc21a064a3f0488e8a84bbfd99c16b8bb89bf8c1c948a70ca642ad7e63e70b",
+      "reviewed": true,
+      "rawCapture": true
+    },
+    {
+      "id": "gallery-03",
+      "stage": "export",
+      "file": "screenshots/gallery-03.png",
+      "sourceFile": "evidence/ui/23-final-save-picker.png",
+      "title": "Android PNG export",
+      "caption": "Choose the destination and filename in Android Files.",
+      "observed": "Final APK create-document picker; raw video subsequently names codes-final.png and invokes Save. Exported bytes are independently verified.",
+      "kind": "screenshot",
+      "durationSeconds": 5,
+      "sha256": "eb6fc159c0741e6b31f2b345e19e3e8c2f1335837b5c5895200e5b712c751f93",
+      "reviewed": true,
+      "rawCapture": true
+    },
+    {
+      "id": "gallery-04",
+      "stage": "import",
+      "file": "screenshots/gallery-04.png",
+      "sourceFile": "evidence/ui/25-final-import-picker.png",
+      "title": "Re-import the saved PNG",
+      "caption": "The actual exported codes-final.png appears in Android Files.",
+      "observed": "Final APK image picker shows codes-final.png, selected by the next recorded UI action.",
+      "kind": "screenshot",
+      "durationSeconds": 5,
+      "sha256": "424f9eff5120a2c4f6822456ff1578055595b71bc0a26035a46ca77f67bd751a",
+      "reviewed": true,
+      "rawCapture": true
+    },
+    {
+      "id": "gallery-05",
+      "stage": "decode",
+      "file": "screenshots/gallery-05.png",
+      "sourceFile": "evidence/ui/26-final-roundtrip.png",
+      "title": "Exact decoded result",
+      "caption": "The exported image decodes to the original 33-character payload.",
+      "observed": "Final APK displays exact payload and QR CODE/URI classification.",
+      "kind": "screenshot",
+      "durationSeconds": 5,
+      "sha256": "2e7289bd09eadcf86af66aa38ba7f63d147af8931650f22cd9a4559942a0f6c7",
+      "reviewed": true,
+      "rawCapture": true
+    }
+  ],
+  "exportVerification": {
+    "width": 1024,
+    "height": 1024,
+    "format": "PNG",
+    "bytes": 7557,
+    "sha256": "1668cf15414af0089f39a7eb15d36ad910db60309ea4220d0e2351ffdfeb28b4",
+    "pixels_match_original_qr": true,
+    "exif_fields": 0,
+    "expected_payload": "https://example.org/oritwig-codes",
+    "app_apk_sha256": "d44be7016b7aae370c421314ff7d274297129409e8e25d989ddf5b4d84621689"
+  },
+  "limits": [
+    "Image input only; live camera scanning is not implemented.",
+    "Recorded excerpts and later genuine screenshots are edited together; this is not a continuous recording.",
+    "Android API35 runtime, physical devices and every barcode format are not covered by this demo."
+  ],
+  "render": {
+    "renderer": "FFmpeg",
+    "resolution": [
+      1280,
+      720
+    ],
+    "fps": 10,
+    "codec": "h264",
+    "pixelFormat": "yuv420p",
+    "durationSeconds": 50.2,
+    "audio": "none",
+    "sha256": "81a7a5e8dade17b72543a56fa56f777ba5c7e936baeaea7f145214171696fb72",
+    "encodingVariant": {
+      "crf": 34,
+      "preset": "veryslow",
+      "reason": "Smaller 720p upload variant of the same six verified scenes; full decode and all scene midpoints rechecked",
+      "masterSha256": "e80ba7c8436e1951458e63de80aa23484d88f6fbd6252a516977b36da5ffc718"
+    }
+  },
+  "coverScene": "03-preview",
+  "sourceVerification": {
+    "buildInputFilesChecked": 265,
+    "mismatches": 0
+  }
+}
