@@ -12,6 +12,28 @@ is not included. The app never automatically opens a decoded URL or action.
 ZXing is the third-party library Telegram uses; it is not Telegram-authored.
 See [exact source lineage and adapter boundaries](docs/PROVENANCE.md).
 
+## See it running
+
+![Oritwig Codes actual QR preview](docs/media/poster.png)
+
+The final-build screenshots below show the verified workflow. A compact video
+upload is being finalized; the recorded demo uses actual app footage and screenshots.
+Input is an existing image; live camera scanning is not implemented.
+
+### Full-screen captures
+
+Open any image to view its original 480 × 800 capture.
+
+<a href="docs/media/screenshots/gallery-01.png"><img src="docs/media/screenshots/gallery-01.png" alt="Final Codes home: read an image or create a QR" width="240"></a> <a href="docs/media/screenshots/gallery-02.png"><img src="docs/media/screenshots/gallery-02.png" alt="Exact input payload and generated QR preview" width="240"></a> <a href="docs/media/screenshots/gallery-05.png"><img src="docs/media/screenshots/gallery-05.png" alt="Re-imported PNG decoded to the exact original payload" width="240"></a>
+
+[Android save picker](docs/media/screenshots/gallery-03.png) · [Exported PNG in the image picker](docs/media/screenshots/gallery-04.png)
+
+Captured from `0.1.0-prototype` on an Android API26 x86 software emulator. The
+exported PNG was independently verified as 1,024 × 1,024 pixels with the exact
+33-character payload `https://example.org/oritwig-codes`. [Verification scope and limits](docs/QA.md).
+
+Tested source: [`7c5be8c`](https://github.com/athemeroy/oritwig-codes/commit/7c5be8c08b4554cb968679706114232f466cad53).
+
 ## Upstream vs Oritwig
 
 - **Upstream:** [ZXing core 3.5.4 at `f651b0a…`](https://github.com/zxing/zxing/tree/f651b0a0375676e47144f73397dddff8868b0e4c/core/src/main). Telegram [pins this version](https://github.com/DrKLO/Telegram/blob/f2908b14133bbffbf7ab04f641ecb5bfaf533242/TMessagesProj/build.gradle#L52) and [uses its QR reader](https://github.com/DrKLO/Telegram/blob/f2908b14133bbffbf7ab04f641ecb5bfaf533242/TMessagesProj/src/main/java/org/telegram/ui/CameraScanActivity.java#L1325-L1344). It is a third-party Telegram dependency, not Telegram-authored code
@@ -39,6 +61,9 @@ adb install -r app/build/outputs/apk/debug/app-debug.apk
 adb install -r app/build/outputs/apk/androidTest/debug/app-debug-androidTest.apk
 adb shell am instrument -w dev.oritwig.codes.test/dev.oritwig.codes.CodesInstrumentation
 ```
+
+GitHub Actions runs the independent build, lint and the 16 JVM tests. The 22
+native checks were run separately on the API26 emulator; CI does not claim them.
 
 JVM tests cover roundtrips, Unicode, limits, format parsing, inversion/rotation,
 Code128, EAN13 and correction metadata. Native tests additionally cover Android
