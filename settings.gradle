@@ -1,0 +1,5 @@
+pluginManagement { repositories { google(); mavenCentral(); gradlePluginPortal() } }
+dependencyResolutionManagement { repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS); repositories { google(); mavenCentral() } }
+rootProject.name = 'oritwig-codes-prototype'
+include ':zxing-core', ':engine', ':app'
+project(':zxing-core').projectDir = file('vendor/zxing')

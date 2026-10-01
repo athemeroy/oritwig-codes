@@ -1,0 +1,17 @@
+plugins { id 'com.android.application' }
+android {
+    namespace 'dev.oritwig.codes'
+    compileSdk 35
+    buildToolsVersion '35.0.0'
+    defaultConfig {
+        applicationId 'dev.oritwig.codes'
+        minSdk 26
+        targetSdk 35
+        versionCode 1
+        versionName '0.1.0-prototype'
+        testInstrumentationRunner 'dev.oritwig.codes.CodesInstrumentation'
+    }
+    compileOptions { sourceCompatibility JavaVersion.VERSION_17; targetCompatibility JavaVersion.VERSION_17 }
+    lint { abortOnError true; checkReleaseBuilds true }
+}
+dependencies { implementation project(':engine') }

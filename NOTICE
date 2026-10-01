@@ -1,0 +1,10 @@
+Oritwig Codes prototype
+Original Android shell, platform adapters and tests: Apache License 2.0.
+
+This product includes ZXing core 3.5.4, Copyright ZXing authors, distributed
+under Apache License 2.0. The complete upstream core source and its original
+notices are preserved in vendor/zxing. See vendor/zxing/LICENSE, NOTICE and
+AUTHORS. These notices are also bundled inside the app's About & licenses UI.
+
+ZXing is an independent third-party project used by Telegram. No Telegram
+source code is included. Telegram is not the author of ZXing or this app.
