@@ -1,7 +1,7 @@
 # Oritwig Codes
 
-A small, independent Android image-code reader and QR maker, powered by the
-complete **ZXing core 3.5.4** source. It reads a chosen image, shows the decoded
+A small Android reference app for image-code reading and QR creation, powered by
+the complete **ZXing core 3.5.4** source. It reads a chosen image, shows the decoded
 payload, and lets you copy/share it. It also turns text into a QR preview and
 saves a PNG through Android's system file picker.
 
@@ -47,6 +47,20 @@ Tested source: [`7c5be8c`](https://github.com/athemeroy/oritwig-codes/commit/7c5
 - **Added here:** a new Android shell, bounded image import, safe text inspection, explicit copy/share, QR preview and system-picker PNG export, cancellation/error states, accessibility labels, light/dark appearance and notices
 - **Different scope:** ZXing is a general library; this app exposes one-code image reading and text-to-QR generation. It does not expose every upstream encoder or multi-code discovery. The legacy ZXing Barcode Scanner Android app has camera workflows but [does not support Android 14](https://github.com/zxing/zxing/tree/zxing-3.5.4#readme); it was not forked here. This new API35-targeting shell is image-input-only, with no live camera or history
 - **Why use it:** read a code from a screenshot or existing image, inspect its exact text without opening it, or make a portable PNG QR without a camera permission, account or server
+
+### Existing libraries and when to use this app
+
+[ZXing core](https://github.com/zxing/zxing#readme) is already a directly usable
+barcode library. [ZXing Android Embedded](https://github.com/journeyapps/zxing-android-embedded#readme)
+already provides an Android library, camera scanning, an embeddable view/activity
+and a sample app. Use those projects directly when you need their library APIs
+or camera integration.
+
+Oritwig Codes contributes a bounded reference-app workflow: image import → inspect
+text → explicit copy/share, and text → QR → PNG export. Its value is the shell,
+safety boundaries, reproducible source pin and workflow checks. There is no new
+barcode engine, and no demonstrated decoding-quality or performance advantage
+over the upstream libraries.
 
 ## Build independently
 
